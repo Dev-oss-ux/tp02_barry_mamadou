@@ -1,0 +1,40 @@
+<div class="form-body">
+  <div class="form-holder">
+    <div class="form-content">
+      <div class="form-items" >
+        <label>Nom : </label> <input type="text" placeholder="nom" [(ngModel)]="ngLastname" /> <br>
+        <label>Prénom : </label> <input type="text" placeholder="prénom" [(ngModel)]="ngFirstname" /> <br>
+        <label>cp : </label> <input type="number" placeholder="code postal" [(ngModel)]="ngZipCode"> <br>
+        <label>Tel : </label> <input type="tel" placeholder="telephone" [(ngModel)]="ngTel" /> <br>
+        <label>Email : </label> <input type="email" placeholder="email" [(ngModel)]="ngEmail" /> <br>
+        <label>Sexe : </label>
+        <div>
+          <input type="radio" name="gender" value="homme" [(ngModel)]="ngGender"> <label> Homme</label>
+          <input type="radio" name="gender" value="femme" [(ngModel)]="ngGender"> <label> Femme</label>
+        </div>
+
+        <div>
+          <label>Login : </label> <input type="text" placeholder="Login" [(ngModel)]="ngLogin" /> <br>
+          <label>Password : </label> <input type="password" id="password" placeholder="Password"
+            [(ngModel)]="ngPassword" /> <br>
+          <label>Verification du Password : </label> <input type="password" id="verifPassword"
+            placeholder="Verification du Password" [(ngModel)]="ngPasswordCheck" /> <br>
+        </div>
+
+        <button (click)="showSummary=true">Envoyer</button>
+
+        <p>Rendu : {{ngLastname}}</p>
+
+      </div>
+      <ng-container *ngIf="showSummary ; showSummary">
+        <app-component-summary showSummary [lastname]="ngLastname" [firstname]="ngFirstname" 
+        [zipCode]="ngZipCode" [tel]="ngTel" [email]="ngEmail" 
+        [gender]="ngGender"
+        [login]="ngLogin" [password]="ngPassword" [passwordCheck]="ngPasswordCheck" 
+         (change)="clicChange($event)">
+
+        </app-component-summary>
+      </ng-container>
+    </div>
+  </div>
+</div>
