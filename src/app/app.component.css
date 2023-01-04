@@ -1,0 +1,22 @@
+*, body {
+  font-family: 'Arial', sans-serif;
+}
+
+
+html, body {
+  background-color: #757575;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  min-height: 100vh;
+}
+
+
+.flex-form-summary {
+  display: flex;
+  flex-direction :row;
+  align-items: center;
+  justify-content : center;
+
+}
+
